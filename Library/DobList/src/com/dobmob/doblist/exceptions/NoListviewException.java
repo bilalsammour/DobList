@@ -1,25 +1,25 @@
 package com.dobmob.doblist.exceptions;
 
-public class NoListviewException extends Exception {
+public class NoListViewException extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6106305495703717878L;
 
-	public NoListviewException() {
+	public NoListViewException() {
 		super();
 	}
 
-	public NoListviewException(String detailMessage, Throwable throwable) {
+	public NoListViewException(String detailMessage, Throwable throwable) {
 		super(detailMessage, throwable);
 	}
 
-	public NoListviewException(String detailMessage) {
+	public NoListViewException(String detailMessage) {
 		super(detailMessage);
 	}
 
-	public NoListviewException(Throwable throwable) {
+	public NoListViewException(Throwable throwable) {
 		super(throwable);
 	}
 

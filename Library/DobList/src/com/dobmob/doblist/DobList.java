@@ -6,7 +6,8 @@ import android.widget.AbsListView.OnScrollListener;
 
 import com.dobmob.doblist.controllers.DobListController;
 import com.dobmob.doblist.events.OnLoadMoreListener;
-import com.dobmob.doblist.exceptions.NoListviewException;
+import com.dobmob.doblist.exceptions.NoEmptyViewException;
+import com.dobmob.doblist.exceptions.NoListViewException;
 
 public class DobList {
 
@@ -18,7 +19,7 @@ public class DobList {
 		dobListController = new DobListController();
 	}
 
-	public void register(ListView listView) throws NoListviewException {
+	public void register(ListView listView) throws NoListViewException {
 		dobListController.register(listView);
 	}
 
@@ -46,16 +47,12 @@ public class DobList {
 		dobListController.setFooterLoadingView(loadingViewRes);
 	}
 
-	public void addLoadingFooterView() {
-		dobListController.addLoadingFooterView();
+	public void addDefaultLoadingFooterView() {
+		dobListController.addDefaultLoadingFooterView();
 	}
 
 	public void setEmptyView(View emptyView) {
 		dobListController.setEmptyView(emptyView);
-	}
-
-	public void setEmptyView(int emptyViewRes) {
-		dobListController.setEmptyView(emptyViewRes);
 	}
 
 	public View getEmptyView() {
@@ -77,9 +74,9 @@ public class DobList {
 	public boolean isLoading() {
 		return dobListController.isLoading();
 	}
-
-	public void setLoading(boolean isLoading) {
-		dobListController.setLoading(isLoading);
+	
+	public void startCentralLoading() throws NoEmptyViewException {
+		dobListController.startCentralLoading();
 	}
 
 	public OnLoadMoreListener getOnLoadMoreListener() {
