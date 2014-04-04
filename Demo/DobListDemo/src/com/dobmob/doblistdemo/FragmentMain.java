@@ -106,7 +106,7 @@ public class FragmentMain extends Fragment {
 			e.printStackTrace();
 		}
 		// Simulate adding data at the first time
-		addDummyData(5);
+		addDummyData(20);
 	}
 
 	protected void addDummyData(final int itemsCount) {
@@ -121,7 +121,7 @@ public class FragmentMain extends Fragment {
 				dobList.finishLoading();
 			}
 
-		}, 2000);
+		}, 3000);
 	}
 
 	protected void addItems(int from, int to) {
