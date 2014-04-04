@@ -14,7 +14,8 @@ import android.widget.ListView;
 
 import com.dobmob.doblist.DobList;
 import com.dobmob.doblist.events.OnLoadMoreListener;
-import com.dobmob.doblist.exceptions.NoListviewException;
+import com.dobmob.doblist.exceptions.NoEmptyViewException;
+import com.dobmob.doblist.exceptions.NoListViewException;
 
 public class FragmentMain extends Fragment {
 
@@ -39,59 +40,84 @@ public class FragmentMain extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_main, container,
 				false);
 
+		// ListView initializing
 		ListView mListView = (ListView) rootView.findViewById(R.id.mListView);
+
+		// Set DobList before setting adapter
 		initDobList(rootView, mListView);
+
+		// Set adapter
 		mListView.setAdapter(adapter);
 
 		return rootView;
 	}
 
 	private void initDobList(View rootView, ListView listView) {
+
+		// DobList initializing
 		dobList = new DobList();
 		try {
-			dobList.register(listView);
-			dobList.addLoadingFooterView();
 
+			// Register ListView
+			//
+			// NoListViewException will be thrown when
+			// there is no ListView
+			dobList.register(listView);
+
+			// Add ProgressBar to footers of ListView
+			// to be shown in loading more
+			dobList.addDefaultLoadingFooterView();
+
+			// Sets the view to show if the adapter is empty
+			// see startCentralLoading() method
 			View noItems = rootView.findViewById(R.id.noItems);
 			dobList.setEmptyView(noItems);
 
+			// Callback called when reaching last item in ListView
 			dobList.setOnLoadMoreListener(new OnLoadMoreListener() {
 
 				@Override
 				public void onLoadMore(final int totalItemCount) {
 					Log.i(TAG, "onStart totalItemCount " + totalItemCount);
-					
-					runHandler();
+
+					// Just inserting some dummy data after
+					// period of time to simulate waiting
+					// data from server
+					addDummyData(10);
 				}
 			});
 
-		} catch (NoListviewException e) {
-			// TODO Auto-generated catch block
+		} catch (NoListViewException e) {
 			e.printStackTrace();
 		}
 
-		dobList.setLoading(true);
-		new Handler().postDelayed(new Runnable() {
+		try {
+			// Show ProgressBar at the center of ListView
+			// this can be used while loading data from
+			// server at the first time
+			//
+			// setEmptyView() must be called before
+			//
+			// NoEmptyViewException will be thrown when
+			// there is no EmptyView
+			dobList.startCentralLoading();
 
-			@Override
-			public void run() {
-				Log.i(TAG, "first add");
-
-				addItems(0, 5);
-				dobList.finishLoading();
-			}
-
-		}, 2000);
+		} catch (NoEmptyViewException e) {
+			e.printStackTrace();
+		}
+		// Simulate adding data at the first time
+		addDummyData(5);
 	}
 
-	protected void runHandler() {
+	protected void addDummyData(final int itemsCount) {
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
 			public void run() {
-				addItems(adapter.getCount(),
-						adapter.getCount() + 10);
+				addItems(adapter.getCount(), adapter.getCount() + itemsCount);
 
+				// We must call finishLoading
+				// when finishing adding data
 				dobList.finishLoading();
 			}
 
