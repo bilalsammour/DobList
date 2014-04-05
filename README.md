@@ -11,7 +11,7 @@ What about getting desired features with your own ListView and its derivatives!
 
 DobLis is an Open Source Android library that provides to ListView adding ProgressBar (or any view) to the footer of ListView to be shown in loading more, and callback that is called when reaching last item in ListView.
 
-![alt tag](https://raw.github.com/bilalsammour/DobLis/master/screenshot1.png)
+![alt tag](https://raw.github.com/bilalsammour/DobLis/master/screenshot.png)
 
 Here is a short video for the example application in this repository : [http://youtu.be/1TPzJDpUwug](http://youtu.be/1TPzJDpUwug)
 
