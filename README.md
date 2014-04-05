@@ -2,7 +2,7 @@ DobLis
 ======
 
 
-DobLis [(Google Play Demo)](https://xxxx.com)
+DobLis [(Google Play Demo)](https://play.google.com/store/apps/details?id=com.dobmob.doblistdemo)
 --------------------------------------------------
 
 Any Android developer needs Endless ListView, and needs progress dialog to be shown in the middle of his own ListView at first loading data, so he will write the code line by line or use a custom ListView to get some features and lost his own ListView.
@@ -13,7 +13,7 @@ DobLis is an Open Source Android library that provides to ListView adding Progre
 
 ![alt tag](https://raw.github.com/bilalsammour/DobLis/master/screenshot1.png)
 
-Here is a short video for the example application in this repository : [https://xxxx.com](https://xxxx.com)
+Here is a short video for the example application in this repository : [http://youtu.be/1TPzJDpUwug](http://youtu.be/1TPzJDpUwug)
 
 
 Setup
