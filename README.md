@@ -169,9 +169,3 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
-
-Note
-----
-
-I developed DobSliding while I am working in Startappz company, so you can find the library in
-[https://github.com/Startappz/DobSliding](https://github.com/Startappz/DobSliding)
