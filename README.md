@@ -1,17 +1,17 @@
-DobLis
-======
+DobList
+=======
 
 
-DobLis [(Google Play Demo)](https://play.google.com/store/apps/details?id=com.dobmob.doblistdemo)
+DobList [(Google Play Demo)](https://play.google.com/store/apps/details?id=com.dobmob.dobListdemo)
 --------------------------------------------------
 
 Any Android developer needs Endless ListView, and needs progress dialog to be shown in the middle of his own ListView at first loading data, so he will write the code line by line or use a custom ListView to get some features and lost his own ListView.
 
 What about getting desired features with your own ListView and its derivatives!
 
-DobLis is an Open Source Android library that provides to ListView adding ProgressBar (or any view) to the footer of ListView to be shown in loading more, and callback that is called when reaching last item in ListView.
+DobList is an Open Source Android library that provides to ListView adding ProgressBar (or any view) to the footer of ListView to be shown in loading more, and callback that is called when reaching last item in ListView.
 
-![alt tag](https://raw.github.com/bilalsammour/DobLis/master/screenshot.png)
+![alt tag](https://raw.github.com/bilalsammour/DobList/master/screenshot.png)
 
 Here is a short video for the example application in this repository : [http://youtu.be/1TPzJDpUwug](http://youtu.be/1TPzJDpUwug)
 
@@ -19,7 +19,7 @@ Here is a short video for the example application in this repository : [http://y
 Setup
 -----
 
-In Eclipse, just import the library as an Android library project. Project > Clean to generate the binaries you need, like R.java, etc. Then, just add DobLis as a dependency to your existing project.
+In Eclipse, just import the library as an Android library project. Project > Clean to generate the binaries you need, like R.java, etc. Then, just add DobList as a dependency to your existing project.
 
 
 How?
