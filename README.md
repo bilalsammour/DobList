@@ -2,7 +2,7 @@ DobList
 =======
 
 
-DobList [(Google Play Demo)](https://play.google.com/store/apps/details?id=com.dobmob.dobListdemo)
+DobList [(Google Play Demo)](https://play.google.com/store/apps/details?id=com.dobmob.doblistdemo)
 --------------------------------------------------
 
 Any Android developer needs Endless ListView, and needs progress dialog to be shown in the middle of his own ListView at first loading data, so he will write the code line by line or use a custom ListView to get some features and lost his own ListView.
