@@ -7,5 +7,6 @@
     <string name="action_clear">Clear</string>
     <string name="no_items">No data to show</string>
     <string name="item_text">Item %d</string>
+    <string name="title_activity_example_with">Example With Activity</string>
 
 </resources>
