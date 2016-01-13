@@ -8,8 +8,8 @@ import android.widget.ListView;
 
 import com.dobmob.doblist.R;
 import com.dobmob.doblist.events.OnLoadMoreListener;
-import com.dobmob.doblist.exceptions.NoEmptyViewException;
-import com.dobmob.doblist.exceptions.NoListViewException;
+import com.dobmob.doblist.exceptions.EmptyViewNotAttachedException;
+import com.dobmob.doblist.exceptions.ListViewNotAttachedException;
 import com.dobmob.doblist.listeners.OnListScrollListener;
 import com.dobmob.doblist.utils.EmptyViewManager;
 import com.dobmob.doblist.utils.ResInflater;
@@ -30,15 +30,15 @@ public class DobListController {
 	private boolean isLoading;
 	private ViewGroup emptyViewParent;
 
-	public void register(ListView listView) throws NoListViewException {
+	public void register(ListView listView) throws ListViewNotAttachedException {
 		this.listView = listView;
 
 		init();
 	}
 
-	private void init() throws NoListViewException {
+	private void init() throws ListViewNotAttachedException {
 		if (listView == null) {
-			throw new NoListViewException();
+			throw new ListViewNotAttachedException();
 		}
 
 		activity = (Activity) listView.getContext();
@@ -147,9 +147,9 @@ public class DobListController {
 				this.isLoading, emptyViewParent, emptyView);
 	}
 	
-	public void startCentralLoading() throws NoEmptyViewException {
+	public void startCentralLoading() throws EmptyViewNotAttachedException {
 		if (this.emptyView == null) {
-			throw new NoEmptyViewException();
+			throw new EmptyViewNotAttachedException();
 			
 		} else {
 			setLoading(true);

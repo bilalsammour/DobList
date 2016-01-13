@@ -14,8 +14,8 @@ import android.widget.ListView;
 
 import com.dobmob.doblist.DobList;
 import com.dobmob.doblist.events.OnLoadMoreListener;
-import com.dobmob.doblist.exceptions.NoEmptyViewException;
-import com.dobmob.doblist.exceptions.NoListViewException;
+import com.dobmob.doblist.exceptions.EmptyViewNotAttachedException;
+import com.dobmob.doblist.exceptions.ListViewNotAttachedException;
 
 public class FragmentMain extends Fragment {
 
@@ -87,7 +87,7 @@ public class FragmentMain extends Fragment {
 				}
 			});
 
-		} catch (NoListViewException e) {
+		} catch (ListViewNotAttachedException e) {
 			e.printStackTrace();
 		}
 
@@ -102,7 +102,7 @@ public class FragmentMain extends Fragment {
 			// there is no EmptyView
 			dobList.startCentralLoading();
 
-		} catch (NoEmptyViewException e) {
+		} catch (EmptyViewNotAttachedException e) {
 			e.printStackTrace();
 		}
 		// Simulate adding data at the first time

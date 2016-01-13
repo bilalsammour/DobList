@@ -6,8 +6,8 @@ import android.widget.AbsListView.OnScrollListener;
 
 import com.dobmob.doblist.controllers.DobListController;
 import com.dobmob.doblist.events.OnLoadMoreListener;
-import com.dobmob.doblist.exceptions.NoEmptyViewException;
-import com.dobmob.doblist.exceptions.NoListViewException;
+import com.dobmob.doblist.exceptions.EmptyViewNotAttachedException;
+import com.dobmob.doblist.exceptions.ListViewNotAttachedException;
 
 public class DobList {
 
@@ -19,7 +19,7 @@ public class DobList {
 		dobListController = new DobListController();
 	}
 
-	public void register(ListView listView) throws NoListViewException {
+	public void register(ListView listView) throws ListViewNotAttachedException {
 		dobListController.register(listView);
 	}
 
@@ -75,7 +75,7 @@ public class DobList {
 		return dobListController.isLoading();
 	}
 	
-	public void startCentralLoading() throws NoEmptyViewException {
+	public void startCentralLoading() throws EmptyViewNotAttachedException {
 		dobListController.startCentralLoading();
 	}
 
